@@ -30,7 +30,7 @@ namespace GradeBook.GradeBooks
             {
                 return 'C';
             }
-            else if (averageGrade < (20 / 100 * Students.Count))
+            else if (averageGrade <= (20 / 100 * Students.Count))
             {
                 return 'D';
             }
