@@ -17,8 +17,8 @@ namespace GradeBook.GradeBooks
                 throw new System.InvalidOperationException("F");
             }
 
-           foreach (var student in Students)
-            {
+           //foreach (var student in Students)
+            //{
                 if (averageGrade > (80 / 100 * Students.Count))
                 {
                     return 'A';
@@ -36,7 +36,7 @@ namespace GradeBook.GradeBooks
                     return 'D';
                 }
                
-            }
+          //  }
                 return GetLetterGrade(averageGrade);
 
         }
