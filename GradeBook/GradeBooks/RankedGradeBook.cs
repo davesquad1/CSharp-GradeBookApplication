@@ -35,7 +35,7 @@ namespace GradeBook.GradeBooks
                 throw new System.InvalidOperationException("F");
             }
             
-            return GetLetterGrade(averageGrade);
+            return GetLetterGrade(rank);
 
         }
     }
