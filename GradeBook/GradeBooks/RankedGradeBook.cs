@@ -1,4 +1,5 @@
 ﻿using GradeBook.Enums;
+using System;
 
 namespace GradeBook.GradeBooks
 {
@@ -16,28 +17,27 @@ namespace GradeBook.GradeBooks
                 throw new System.InvalidOperationException("F");
             }
 
-            int rank = Students.Count * 20 / 100;
-        
-            if (rank >= 80)
+           foreach (var student in Students)
             {
-                return 'A';
+                if (averageGrade > (80 / 100 * Students.Count))
+                {
+                    return 'A';
+                }
+                else if (averageGrade > (60 / 100 * Students.Count) && averageGrade < (40 / 100 * Students.Count))
+                {
+                    return 'B';
+                }
+                else if (averageGrade > (40 / 100 * Students.Count) && averageGrade < (20 / 100 * Students.Count))
+                {
+                    return 'C';
+                }
+                else if (averageGrade > (20 / 100 * Students.Count))
+                {
+                    return 'D';
+                }
+               
             }
-            else if (rank >= 60 && rank < 80)
-            {
-                return 'B';
-            }
-            else if (rank >= 40 && rank < 60)
-            {
-                return 'C';
-            }
-            if (rank < 40)
-            {
-                return 'D';
-            }
-          
-           
-            
-            return GetLetterGrade(averageGrade);
+                return GetLetterGrade(averageGrade);
 
         }
     }
