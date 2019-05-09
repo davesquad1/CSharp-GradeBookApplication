@@ -20,7 +20,7 @@ namespace GradeBook.GradeBooks
        
             if (averageGrade >= (80 / 100 * Students.Count))
             {
-                                return 'A';
+                return 'A';
             }
             else if (averageGrade >= (60 / 100 * Students.Count) && averageGrade < (80 / 100 * Students.Count))
             {
@@ -34,9 +34,8 @@ namespace GradeBook.GradeBooks
             {
                 return 'D';
             }
-                //  }
-                return GetLetterGrade(averageGrade);
-
-        }
+            return GetLetterGrade(averageGrade);
+        }     
     }
 }
+
