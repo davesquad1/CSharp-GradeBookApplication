@@ -11,6 +11,11 @@ namespace GradeBook.GradeBooks
         
         public override char GetLetterGrade(double averageGrade)
         {
+            if (Students.Count < 5)
+            {
+                throw new System.InvalidOperationException("F");
+            }
+
             int rank = Students.Count * 20 / 100;
         
             if (rank >= 80)
@@ -30,12 +35,9 @@ namespace GradeBook.GradeBooks
                 return 'D';
             }
           
-            if (Students.Count < 5)
-            {
-                throw new System.InvalidOperationException("F");
-            }
+           
             
-            return GetLetterGrade(rank);
+            return GetLetterGrade(averageGrade);
 
         }
     }
