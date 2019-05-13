@@ -24,15 +24,15 @@ namespace GradeBook.GradeBooks
             {
                 return 'A';
             }
-            else if (averageGrade >= threshold * Students.Count && averageGrade <= (threshold * 2) * Students.Count)
+            else if (averageGrade >= (threshold * 4) * Students.Count && averageGrade < (threshold * 2) * Students.Count)
             {
                 return 'B';
             }
-            else if (averageGrade >= (threshold  * 2) * Students.Count && averageGrade <= (threshold * 4) * Students.Count)
+            else if (averageGrade >= (threshold  * 6) * Students.Count && averageGrade < (threshold * 4) * Students.Count)
             {
                 return 'C';
             }
-            else if (averageGrade >= (threshold * 4) * Students.Count && averageGrade <= (threshold * 6) * Students.Count)
+            else if (averageGrade >= (threshold * 8) * Students.Count && averageGrade < (threshold * 6) * Students.Count)
             {
                 return 'D';
             }
