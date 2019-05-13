@@ -12,10 +12,10 @@ namespace GradeBook.GradeBooks
         public override char GetLetterGrade(double averageGrade)
         {
             return GetLetterGrade(averageGrade);
-            //if (Students.Count < 5)
-            //{
-            //    throw new System.InvalidOperationException("F");
-            //}
+            if (Students.Count < 5)
+            {
+                throw new System.InvalidOperationException("F");
+            }
 
 
             //if (averageGrade >= (80 / 100 * Students.Count))
@@ -35,7 +35,7 @@ namespace GradeBook.GradeBooks
             //    return 'D';
             //}
             //return GetLetterGrade(averageGrade);
-        }     
+        }
     }
 }
 
