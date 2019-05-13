@@ -1,5 +1,6 @@
 ﻿using GradeBook.Enums;
 using System;
+using System.Linq;
 
 namespace GradeBook.GradeBooks
 {
@@ -16,8 +17,16 @@ namespace GradeBook.GradeBooks
             {
                 throw new InvalidOperationException("Ranked grading requires at least 5 students.");
             }
+            var threshold = 0.2 * Students.Count;
+            if (averageGrade >= threshold)
+            {
+                return 'A';
+            }
+
+
             return base.GetLetterGrade(averageGrade);
         }
+
             
             
 
