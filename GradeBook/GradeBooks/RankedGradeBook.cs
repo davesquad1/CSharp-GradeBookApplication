@@ -17,14 +17,31 @@ namespace GradeBook.GradeBooks
             {
                 throw new InvalidOperationException("Ranked grading requires at least 5 students.");
             }
+
             var threshold = 0.2 * Students.Count;
-            if (averageGrade >= threshold)
+
+            if (averageGrade >= threshold * Students.Count)
             {
                 return 'A';
             }
+            else if (averageGrade >= threshold * Students.Count && averageGrade <= (threshold * 2) * Students.Count)
+            {
+                return 'B';
+            }
+            else if (averageGrade >= (threshold  * 2) * Students.Count && averageGrade <= (threshold * 4) * Students.Count)
+            {
+                return 'C';
+            }
+            else if (averageGrade >= (threshold * 4) * Students.Count && averageGrade <= (threshold * 6) * Students.Count)
+            {
+                return 'D';
+            }
+            else
+            {
+                return 'F';
+            }
 
-
-            return base.GetLetterGrade(averageGrade);
+            //return base.GetLetterGrade(averageGrade);
         }
 
             
