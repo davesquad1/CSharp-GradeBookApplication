@@ -20,12 +20,11 @@ namespace GradeBook.GradeBooks
             var threshold = (int)Math.Ceiling(Students.Count * 0.2);
             var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
 
-            //List<Student> ResultA = new List<Student>(grades.FindAll(threshold));
-            for (var i = 0; i <= threshold; i++)
-            {
-                return 'A';
-            }
+            var sum = 0;
+            sum = (int)grades.Sum();
 
+            if (sum >= threshold)
+                return 'A';
           
 
             return base.GetLetterGrade(averageGrade);
