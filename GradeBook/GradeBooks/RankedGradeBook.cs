@@ -25,9 +25,16 @@ namespace GradeBook.GradeBooks
 
             if (sum >= threshold)
                 return 'A';
-          
+            else if (sum >= (threshold * 2) && sum < threshold)
+                return 'B';
+            else if (sum >= (threshold * 6) && sum < (threshold * 4))
+                return 'C';
+            else if (sum >= (threshold * 8) && sum < (threshold * 6))
+                return 'D';
+            else
+                return 'F';
 
-            return base.GetLetterGrade(averageGrade);
+           // return base.GetLetterGrade(averageGrade);
 
             //if (averageGrade >= threshold * Students.Count)
             //{
