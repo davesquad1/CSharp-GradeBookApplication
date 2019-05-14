@@ -23,13 +23,13 @@ namespace GradeBook.GradeBooks
             var sum = 0;
             sum = (int)grades.Sum();
 
-            if (sum >= threshold)
+            if (sum <= threshold)
                 return 'A';
-            else if (sum >= (threshold * 2) && sum < threshold)
+            else if (sum <= (threshold * 2) && sum > threshold)
                 return 'B';
-            else if (sum >= (threshold * 6) && sum < (threshold * 4))
+            else if (sum <= (threshold * 6) && sum > (threshold * 4))
                 return 'C';
-            else if (sum >= (threshold * 8) && sum < (threshold * 6))
+            else if (sum <= (threshold * 8) && sum > (threshold * 6))
                 return 'D';
             else
                 return 'F';
