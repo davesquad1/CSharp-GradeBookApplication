@@ -20,21 +20,34 @@ namespace GradeBook.GradeBooks
             var threshold = (int)Math.Ceiling(Students.Count * 0.2);
             var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
 
-            var sum = 0;
-            sum = (int)grades.Sum();
-
-            if (sum <= threshold)
+            if (grades[threshold - 1] <= averageGrade)
                 return 'A';
-            else if (sum <= (threshold * 2) && sum > threshold)
+            else if (grades[(threshold * 2) - 1] <= averageGrade)
                 return 'B';
-            else if (sum <= (threshold * 6) && sum > (threshold * 4))
+            else if (grades[(threshold * 3) - 1] <= averageGrade)
                 return 'C';
-            else if (sum <= (threshold * 8) && sum > (threshold * 6))
+            else if (grades[(threshold * 4) - 1] <= averageGrade)
                 return 'D';
             else
                 return 'F';
 
-           // return base.GetLetterGrade(averageGrade);
+            //return base.GetLetterGrade(averageGrade);
+
+            //var sum = 0;
+            //sum = (int)grades.Sum();
+
+            //if (sum <= threshold)
+            //    return 'A';
+            //else if (sum <= (threshold * 2) && sum > threshold)
+            //    return 'B';
+            //else if (sum <= (threshold * 6) && sum > (threshold * 4))
+            //    return 'C';
+            //else if (sum <= (threshold * 8) && sum > (threshold * 6))
+            //    return 'D';
+            //else
+            //    return 'F';
+
+            // return base.GetLetterGrade(averageGrade);
 
             //if (averageGrade >= threshold * Students.Count)
             //{
@@ -80,7 +93,7 @@ namespace GradeBook.GradeBooks
             //{
             //    return 'D';
             //}
-            //return GetLetterGrade(averageGrade);
+           // return GetLetterGrade(averageGrade);
         }
     }
 
