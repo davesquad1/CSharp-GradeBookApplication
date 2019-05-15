@@ -4,8 +4,8 @@ using System;
 
 namespace GradeBook.UserInterfaces
 {
-    public static class StartingUserInterface
-    {
+    public static class StartingUserInterface { 
+
         public static bool Quit = false;
         public static void CommandLoop()
         {
@@ -45,15 +45,15 @@ namespace GradeBook.UserInterfaces
             //Console.WriteLine("Created gradebook {0}.", name);
             //GradeBookUserInterface.CommandLoop(gradeBook);
 
-            if (GradeBookType.Standard.ToString() == name)
-            { BaseGradeBook gradeBook = new BaseGradeBook(name); }
+            //if (GradeBookType.Standard.ToString() == name)
+            //{ BaseGradeBook gradeBook = new BaseGradeBook(name); }
 
-            else if (GradeBookType.Ranked.ToString() == name)
-            { BaseGradeBook gradeBook = new BaseGradeBook(name); }
-            else {
-                Console.WriteLine("{0} is not a supported type of gradebook, please try again", command);
-                Quit = true;
-                  }
+            //else if (GradeBookType.Ranked.ToString() == name)
+            //{ BaseGradeBook gradeBook = new BaseGradeBook(name); }
+            //else {
+            //    Console.WriteLine("{0} is not a supported type of gradebook, please try again", command);
+            //    Quit = true;
+            //      }
 
         } 
 
