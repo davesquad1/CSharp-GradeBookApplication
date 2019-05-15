@@ -1,4 +1,5 @@
-﻿using GradeBook.GradeBooks;
+﻿using GradeBook.Enums;
+using GradeBook.GradeBooks;
 using System;
 
 namespace GradeBook.UserInterfaces
@@ -39,11 +40,22 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine("Command not valid, Create requires a name and type of gradebook.");
                 return;
             }
-            var name = parts[1];
-            BaseGradeBook gradeBook = new BaseGradeBook(name);
-            Console.WriteLine("Created gradebook {0}.", name);
-            GradeBookUserInterface.CommandLoop(gradeBook);
-        }
+            var name = parts[2];
+            //BaseGradeBook gradeBook = new BaseGradeBook(name);
+            //Console.WriteLine("Created gradebook {0}.", name);
+            //GradeBookUserInterface.CommandLoop(gradeBook);
+
+            if (GradeBookType.Standard.ToString() == name)
+            { BaseGradeBook gradeBook = new BaseGradeBook(name); }
+
+            else if (GradeBookType.Ranked.ToString() == name)
+            { BaseGradeBook gradeBook = new BaseGradeBook(name); }
+            else {
+                Console.WriteLine("{0} is not a supported type of gradebook, please try again", command);
+                Quit = true;
+                 }
+
+        } 
 
         public static void LoadCommand(string command)
         {
@@ -53,7 +65,7 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine("Command not valid, Load requires a name.");
                 return;
             }
-            var name = parts[1];
+            var name = parts[2];
             var gradeBook = BaseGradeBook.Load(name);
 
             if (gradeBook == null)
