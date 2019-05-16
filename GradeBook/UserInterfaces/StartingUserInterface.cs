@@ -40,7 +40,7 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine("Command not valid, Create requires a name and type of gradebook.");
                 return;
             }
-            var name = parts[2];
+            //var name = parts[2];
             //BaseGradeBook gradeBook = new BaseGradeBook(name);
             //Console.WriteLine("Created gradebook {0}.", name);
             //GradeBookUserInterface.CommandLoop(gradeBook);
@@ -50,10 +50,11 @@ namespace GradeBook.UserInterfaces
 
             //else if (GradeBookType.Ranked.ToString() == name)
             //{ BaseGradeBook gradeBook = new BaseGradeBook(name); }
-            //else {
+            //else
+            //{
             //    Console.WriteLine("{0} is not a supported type of gradebook, please try again", command);
             //    Quit = true;
-            //      }
+            //}
 
         } 
 
