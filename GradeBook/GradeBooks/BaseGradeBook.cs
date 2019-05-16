@@ -10,8 +10,10 @@ using GradeBook.UserInterfaces;
 
 namespace GradeBook.GradeBooks
 {
-    public abstract class BaseGradeBook
+    public class BaseGradeBook
     {
+        private object isWeighted;
+
         public string Name { get; set; }
         public List<Student> Students { get; set; }
         public GradeBookType Type { get; set; }
@@ -22,6 +24,12 @@ namespace GradeBook.GradeBooks
             Name = name;
             IsWeighted = isWeighted;
             Students = new List<Student>();
+        }
+
+        public BaseGradeBook(string name, object isWeighted)
+        {
+            Name = name;
+            this.isWeighted = isWeighted;
         }
 
         public void AddStudent(Student student)
